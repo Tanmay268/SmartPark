@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: smart-parking-backend
+    env: python
+    region: singapore
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: FRONTEND_URL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: TOKEN_TTL_HOURS
+        value: "168"
+      - key: SIMULATION_MODE
+        value: "true"
+      - key: SERIAL_LISTENER_ENABLED
+        value: "false"
+      - key: AUTO_BOOKING_DURATION_HOURS
+        value: "2"
+      - key: GATE_ENTRY_DEBOUNCE_MS
+        value: "5000"
+      - key: GATE_CAMERA_CAPTURE_COMMAND
+        value: ""
+      - key: GATE_CAMERA_IMAGE_PATH
+        value: ""
+      - key: GATE_MOCK_PLATE
+        value: ""
+      - key: SHOW_CAMERA_PREVIEW
+        value: "false"
+      - key: CAMERA_INDEX
+        value: "0"

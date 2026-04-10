@@ -1,0 +1,10 @@
+{
+  "name": "smart-parking-system",
+  "version": "1.0.0",
+  "description": "Advanced full-stack IoT Smart Parking System with Python backend",
+  "scripts": {
+    "install:frontend": "npm install --prefix frontend",
+    "dev:frontend":     "npm start --prefix frontend",
+    "build:frontend": "npm run build --prefix frontend"
+  }
+}
